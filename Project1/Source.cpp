@@ -43,6 +43,12 @@ int main()
 			if (std::fabs(cv::contourArea(contours[i])) < 100 || !cv::isContourConvex(approx))
 				continue;
 
+			for (int j = 0; j < contours[i].size() - 1; j++)
+			{
+				//cout << contours[i][j] << "\n";
+				line(dst, contours[i][j], contours[i][j + 1], Scalar(94, 206, 165, 255), 2);
+			}
+
 			if (approx.size() == 3)
 			{
 
